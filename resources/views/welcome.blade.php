@@ -1,1 +1,1 @@
-@extends('Frontend.layouts.master')
+@extends('Frontend.pages.index')
