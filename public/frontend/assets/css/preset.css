@@ -2,7 +2,7 @@
  Theme Name: Bittanto
  Theme URI: https://themeforest.net/user/themewar/portfolio
  Author: themewar
- Author URI: 
+ Author URI:
  Description: Bittanto - Creative Resume HTML5 Responsive Template
  Version: 1.0
  License:
@@ -59,7 +59,7 @@ a{
     -webkit-transition: all ease 300ms;
 }
 a:hover{
-    color: #01d85f;
+    color: #FFB319;
     text-decoration: none;
 }
 input:focus, button:focus, select:focus, textarea:focus, a:focus{
@@ -94,7 +94,7 @@ input:focus, button:focus, select:focus, textarea:focus, a:focus{
     word-break: break-word;
 }
 .secondary_color{
-    color: #01d85f;
+    color: #FFB319;
 }
 .primary_color{
     color: #7635f5;
@@ -108,7 +108,7 @@ input:focus, button:focus, select:focus, textarea:focus, a:focus{
 .sectionTitle{
     font-weight: 700;
     font-size: 20px;
-    color: #01d85f;
+    color: #FFB319;
     letter-spacing: 0;
     line-height: .8;
     margin: 0 0 35px;
@@ -145,7 +145,7 @@ input:focus, button:focus, select:focus, textarea:focus, a:focus{
     color: #FFF;
 }
 .btt_reverse{
-    background: #01d85f;
+    background: #FFB319;
 }
 .btt_btn.only_icon{
     padding: 0 5px;
@@ -175,7 +175,7 @@ input:focus, button:focus, select:focus, textarea:focus, a:focus{
     left: auto;
     right: 0;
     top: 0;
-    background: #01d85f;
+    background: #FFB319;
     transition: width .4s cubic-bezier(.25,.8,.25,1) 0s;
     -moz-transition: width .4s cubic-bezier(.25,.8,.25,1) 0s;
     -webkit-transition: width .4s cubic-bezier(.25,.8,.25,1) 0s;
@@ -239,7 +239,7 @@ input:focus, button:focus, select:focus, textarea:focus, a:focus{
     text-align: center;
     font-size: 20px;
     color: #fff;
-    background: #01d85f;
+    background: #FFB319;
     margin-right: -1px;
 }
 @media (max-width: 576px) {

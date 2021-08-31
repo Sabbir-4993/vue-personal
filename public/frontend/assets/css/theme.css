@@ -2,7 +2,7 @@
  Theme Name: Bittanto
  Theme URI: https://themeforest.net/user/themewar/portfolio
  Author: themewar
- Author URI: 
+ Author URI:
  Description: Bittanto - Creative Resume HTML5 Responsive Template
  Version: 1.0
  License:
@@ -50,7 +50,7 @@
 }
 .psHeader svg{
     height: 150px;
-    fill: #01d85f;
+    fill: #22577A;
     width: 100%;
     position: absolute;
     top: -30px;
@@ -58,7 +58,7 @@
 }
 .psHeader svg.svg2{
     top: -25px;
-    fill: #01d85f;
+    fill: #22577A;
 }
 .psContent{
     position: absolute;
@@ -236,7 +236,7 @@
     min-width: 115px;
     padding: 40px 15px 39px;
     position: relative;
-    
+
     transition: all ease 300ms;
     -moz-transition: all ease 300ms;
     -webkit-transition: all ease 300ms;
@@ -270,7 +270,7 @@
     text-align: center;
 }
 .mainMenu ul li.active > a, .mainMenu ul li:hover > a{
-    color: #01d85f;
+    color: #22577A;
 }
 .mainMenu ul li a span{
     position: relative;
@@ -289,13 +289,13 @@
     margin: auto 0;
     height: 40px;
     opacity: .4;
-    
+
     transition: all ease 300ms;
     -moz-transition: all ease 300ms;
     -webkit-transition: all ease 300ms;
 }
 .mainMenu ul li.active i, .mainMenu ul li:hover i{
-    color: #01d85f;
+    color: #22577A;
     opacity: .1;
 }
 .menu_btn{
@@ -376,7 +376,7 @@
 }
 .icon_box_01:hover i{
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: #01d85f;
+    background: #22577A;
 }
 .icon_box_01 h3{
     font-size: 16px;
@@ -395,7 +395,7 @@
     color: inherit;
 }
 .icon_box_01 p a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 
 .abContent{
@@ -536,7 +536,7 @@
 }
 .tesAuthor h6{
     font-size: 12px;
-    color: #01d85f;
+    color: #22577A;
     letter-spacing: 2px;
     display: block;
     margin: 0;
@@ -582,13 +582,13 @@
 .owl-carousel button.owl-dot.active span{
     width: 8px;
     height: 8px;
-    background: #01d85f;
+    background: #22577A;
 }
 .owl-carousel .owl-nav button.owl-next, .owl-carousel .owl-nav button.owl-prev{
     width: 25px;
     height: 25px;
     border-radius: 2px;
-    background-color: #01d85f;
+    background-color: #22577A;
     color: #FFF;
     line-height: 25px;
     text-align: center;
@@ -624,7 +624,7 @@
     max-width: 100%;
     min-width: inherit;
     opacity: .3;
-    
+
     transition: all ease 300ms;
     -moz-transition: all ease 300ms;
     -webkit-transition: all ease 300ms;
@@ -668,7 +668,7 @@
 }
 .singleInt:hover i {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: #01d85f;
+    background: #22577A;
 }
 
 
@@ -689,7 +689,7 @@
     -webkit-transition: all ease 300ms;
 }
 .pricingTable:hover > i{
-    color: #01d85f;
+    color: #22577A;
 }
 .pricingTable h5{
     color: #FFF;
@@ -724,7 +724,7 @@
     font-size: 11px;
     font-weight: 600;
     line-height: 18px;
-    color: #01d85f;
+    color: #22577A;
     position: relative;
     border-radius: 2px;
     text-transform: uppercase;
@@ -739,7 +739,7 @@
     position: relative;
     margin-right: 7px;
     top: 3px;
-    color: #01d85f;
+    color: #22577A;
 }
 .btt_link span{
     position: relative;
@@ -754,7 +754,7 @@
     bottom: 0;
     width: 100%;
     height: 1px;
-    background: #01d85f;
+    background: #22577A;
 }
 .btt_link span:before {
     content: '';
@@ -862,34 +862,34 @@
     height: 15px;
 }
 .ldInner.profLevel1 span:nth-child(1):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel2 span:nth-child(-n+3):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel3 span:nth-child(-n+4):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel4 span:nth-child(-n+5):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel5 span:nth-child(-n+6):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel6 span:nth-child(-n+7):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel7 span:nth-child(-n+8):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel8 span:nth-child(-n+9):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel9 span:nth-child(-n+10):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner.profLevel10 span:nth-child(-n+11):after{
-    background: #01d85f;
+    background: #22577A;
 }
 .ldInner i{
     font-style: normal;
@@ -1113,7 +1113,7 @@
     -webkit-transition: all ease 300ms;
 }
 .filterUL li.active, .filterUL li:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .filterUL li:last-child{
     margin-right: 0;
@@ -1143,7 +1143,7 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: #01d85f;
+    background-color: #22577A;
     transform-origin: 50% 100%;
 }
 .folio_decoration:first-child {
@@ -1186,7 +1186,7 @@
     color: #FFF;
 }
 .folio_title a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .folio_cat{
     font-size: 14px;
@@ -1197,7 +1197,7 @@
     color: #808080;
 }
 .folio_cat a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 
 .working i{
@@ -1206,12 +1206,12 @@
     -moz-animation:spin 1s linear infinite;
     animation:spin 1s linear infinite;
 }
-@keyframes spin { 
-    100% { 
+@keyframes spin {
+    100% {
         -moz-transform: rotate(360deg);
-        -webkit-transform: rotate(360deg); 
-        transform:rotate(360deg); 
-    } 
+        -webkit-transform: rotate(360deg);
+        transform:rotate(360deg);
+    }
 }
 .alert.alert-warning.folioAlert{
     color: #856404;
@@ -1282,7 +1282,7 @@
     position: relative;
 }
 .biMeta:hover{
-    background: #01d85f;
+    background: #22577A;
 }
 .biMeta a:after{
     content: '';
@@ -1319,7 +1319,7 @@
     color: inherit;
 }
 .biDetails h3 a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .text-left .biDetails h3{
     margin-left: 0;
@@ -1331,13 +1331,13 @@
     color: #7635f5;
 }
 .biDetails .btt_link:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .biDetails .btt_link span:after{
     background: #7635f5;
 }
 .biDetails .btt_link span:before{
-    background: #01d85f;
+    background: #22577A;
 }
 .blogCount{
     position: absolute;
@@ -1367,7 +1367,7 @@
     font-size: 12px;
 }
 .btt_pagination a:hover, .btt_pagination span.current{
-    color: #01d85f;
+    color: #22577A;
 }
 .btt_pagination a i.rotateHorizonaly{
     transform: rotate(-180deg);
@@ -1459,7 +1459,7 @@ textarea{
     color: inherit;
 }
 .blogMeta a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .blogMeta span{
     margin-right: 24px;
@@ -1525,7 +1525,7 @@ textarea{
 .sicmr_tag i {
     font-size: 18px;
     line-height: 26px;
-    color: #01d85f;
+    color: #22577A;
     float: left;
     margin-right: -5px;
 }
@@ -1537,12 +1537,12 @@ textarea{
     margin-left: 20px;
 }
 .sicmr_tag a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .sicmr_social{
     font-size: 16px;
     line-height: 26px;
-    color: #01d85f;
+    color: #22577A;
     display: flex;
     justify-content: flex-end;
 }
@@ -1637,7 +1637,7 @@ textarea{
     position: absolute;
     left: 0;
     top: 0;
-    background: rgba(1, 216, 95, .25);
+    background: rgba(255, 179, 25, .5);
     transition: all ease 300ms;
     -moz-transition: all ease 300ms;
     -webkit-transition: all ease 300ms;
@@ -1670,7 +1670,7 @@ textarea{
     visibility: visible;
 }
 .lSSlideOuter .lSPager.lSGallery li.active:before, .lSSlideOuter .lSPager.lSGallery li:hover:before{
-    background: rgba(1, 216, 95, .55);
+    background: rgba(118, 53, 245, .5);
 }
 .folioTitle{
     font-weight: 700;
@@ -1713,7 +1713,7 @@ textarea{
 }
 .icon_box_4:hover i {
     border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
-    background: #01d85f;
+    background: #22577A;
 }
 .icon_box_4 h3{
     font-size: 16px;
@@ -1802,7 +1802,7 @@ body.SideBarOpend{
 }
 
 .sidebarToggler:hover{
-    background: #01d85f;
+    background: #22577A;
 }
 .sidebarOverlay{
     position: fixed;
@@ -1843,7 +1843,7 @@ body.SideBarOpend{
 .widget_title{
     font-weight: 700;
     font-size: 16px;
-    color: #01d85f;
+    color: #22577A;
     letter-spacing: 0;
     line-height: .8;
     margin: 0 0 30px;
@@ -1880,7 +1880,7 @@ body.SideBarOpend{
     -moz-transition: all ease 400ms;
 }
 .widget-search form button:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .widget ul {
     margin: 0;
@@ -1907,7 +1907,7 @@ body.SideBarOpend{
     line-height: inherit;
 }
 .widget ul li:hover {
-    color: #01d85f;
+    color: #22577A;
 }
 .widget ul li:before {
     content: "\ea65";
@@ -1958,7 +1958,7 @@ body.SideBarOpend{
     margin-top: 3px;
 }
 .singleRecent a:hover{
-    color: #01d85f;
+    color: #22577A;
 }
 .widget .tabclouds {
     width: 100%;
@@ -1981,8 +1981,8 @@ body.SideBarOpend{
     float: left;
 }
 .widget .tabclouds a:hover{
-    border-color: #01d85f;
-    color: #01d85f;
+    border-color: #22577A;
+    color: #22577A;
 }
 
 /*--------------------------------------------------------
@@ -1994,7 +1994,7 @@ body.SideBarOpend{
     bottom: -30px;
     width: 40px;
     height: 40px;
-    background: #01d85f;
+    background: #22577A;
     color: #FFF;
     font-size: 20px;
     border-radius: 2px;

@@ -2,7 +2,7 @@
  Theme Name: Bittanto
  Theme URI: https://themeforest.net/user/themewar/portfolio
  Author: themewar
- Author URI: 
+ Author URI:
  Description: Bittanto - Creative Resume HTML5 Responsive Template
  Version: 1.0
  License:
@@ -27,7 +27,7 @@
 
 (function ($) {
     'use strict';
-    
+
     /*--------------------------------------------------------
     / 1. Init Vars
     /---------------------------------------------------------*/
@@ -37,7 +37,7 @@
         folioGallery = $('#folioGallery'),
         pssBox = $('.pssBox'),
         hasCounter = $('.hasCounter');
-    
+
     /*--------------------------------------------------------
     / 2. All Slider
     /----------------------------------------------------------*/
@@ -51,7 +51,7 @@
             navText: ['<i class="icofont-long-arrow-left"></i>', '<i class="icofont-long-arrow-right"></i>']
         });
     }
-    
+
     if(clientSlider.length > 0){
         var clientSlider_obj = clientSlider.owlCarousel({
             margin: 2,
@@ -77,7 +77,7 @@
             }
         });
     }
-    
+
     if(folioGallery.length > 0){
         folioGallery.lightSlider({
             gallery:true,
@@ -90,17 +90,17 @@
             thumbMargin: 5,
             onSliderLoad: function() {
                 folioGallery.removeClass('cS-hidden');
-            }     
-        }); 
+            }
+        });
     }
-    
+
     /*--------------------------------------------------------
     / 3. Mixer
     /---------------------------------------------------------*/
     if (Grid.length > 0){
         Grid.themeWar();
     }
-    
+
     /*--------------------------------------------------------
     / 4. Folio Ajax
     /---------------------------------------------------------*/
@@ -137,7 +137,7 @@
             }
         });
     }
-    
+
     /*--------------------------------------------------------
     / 5. Gmaps
     /---------------------------------------------------------*/
@@ -145,28 +145,28 @@
         var map;
         map = new GMaps({
             el: '#map',
-            lat: 53.967015,
-            lng: -1.079608,
+            lat: 23.744223,
+            lng: 90.440060,
             scrollwheel: false,
-            zoom: 16,
-            zoomControl: false,
+            zoom: 15,
+            zoomControl: true,
             panControl: false,
-            streetViewControl: false,
+            streetViewControl: true,
             mapTypeControl: false,
             overviewMapControl: false,
             clickable: false
         });
         var image = '';
         map.addMarker({
-            lat: 53.967015,
-            lng: -1.079608,
+            lat: 23.744223,
+            lng: 90.440060,
             icon: 'assets/images/marker.png',
             animation: google.maps.Animation.DROP,
             verticalAlign: 'bottom',
             horizontalAlign: 'center',
             backgroundColor: '#d3cfcf'
         });
-        
+
         if($('body').hasClass('light')){
             var styles = [
                 {
@@ -248,7 +248,7 @@
         });
         map.setStyle("map_style");
     }
-    
+
     /*--------------------------------------------------------
     / 6. Sidebar Toggle
     /---------------------------------------------------------*/
@@ -261,12 +261,12 @@
         }
         $('body').toggleClass('SideBarOpend');
     });
-    
+
     $('.sidebarOverlay, .widget_closer').on('click', function(){
         $('body').removeClass('SideBarOpend');
         $(".sidebar").mCustomScrollbar("destroy");
     });
-    
+
     /*--------------------------------------------------------
     / 7. Skills
     /---------------------------------------------------------*/
@@ -298,7 +298,7 @@
         });
         coun = false;
     }
-    
+
     /*--------------------------------------------------------
     / 8. Funfact
     /---------------------------------------------------------*/
@@ -330,7 +330,7 @@
             var $this = $(this);
             var form_data = $this.serialize();
             $('button[type="submit"]', $this).html('<span><i class="icon icon-Restart"></i>Processing...</span>');
-            
+
             var required = 0;
             $('.required', $this).each(function () {
                 if ($(this).val() == '') {
@@ -375,7 +375,7 @@
         $('.mainMenu').slideToggle();
         $(this).toggleClass('active');
     });
-    
+
     /*--------------------------------------------------------
     / 11. Back To Top
     /---------------------------------------------------------*/
@@ -393,7 +393,7 @@
         body.animate({scrollTop: 0}, 800);
         return false;
     });
-    
+
     /*--------------------------------------------------------
     / 12. Preloader
     /---------------------------------------------------------*/
