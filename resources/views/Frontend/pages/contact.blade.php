@@ -1,5 +1,9 @@
 @extends('Frontend.layouts.master')
 
+@section('page_title')
+    {{ "Contact | Sabbir" }}
+@endsection
+
 @section('content')
     <div class="pageCointainer">
         <section class="comonSection mapSection mb30">

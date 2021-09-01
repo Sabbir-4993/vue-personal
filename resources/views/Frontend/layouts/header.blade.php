@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Sabbir | Portfolio</title>
+    <title>@yield('page_title')</title>
+    <link rel="shortcut icon" href="{{asset('frontend/assets/images/favicon.png')}}">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
@@ -25,7 +26,4 @@
     <link rel="stylesheet" href="{{asset('frontend/assets/css/light.css')}}"/>
     <!-- End Include All CSS -->
 
-    <!-- Favicon Icon -->
-    <link rel="icon" type="image/png" href="{{asset('frontend/assets/images/favicon.png')}}">
-    <!-- Favicon Icon -->
 </head>
