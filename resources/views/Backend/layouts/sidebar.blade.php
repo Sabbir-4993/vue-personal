@@ -21,10 +21,11 @@
             <i class="far fa-fw fa-window-maximize"></i>
             <span> Resume </span>
         </a>
-        <div id="collapseResume" class="collapse @yield('resume_show')" aria-labelledby="headingResume" data-parent="#accordionSidebar">
+        <div id="collapseResume" class="collapse @yield('show')" aria-labelledby="headingResume" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <a class="collapse-item @yield('resume_active')" href="{{route('personaldetails')}}">Personal Details</a>
-                <a class="collapse-item" href="{{route('academicdetails')}}">Academic Details</a>
+                <a class="collapse-item @yield('personal_active')" href="{{route('personaldetails')}}">Personal Details</a>
+                <a class="collapse-item  @yield('academic_active')" href="{{route('academicdetails')}}">Academic Details</a>
+                <a class="collapse-item  @yield('what_i_do_active')" href="{{route('whatido')}}">What I Do?</a>
             </div>
         </div>
     </li>

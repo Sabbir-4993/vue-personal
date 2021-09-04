@@ -27,3 +27,4 @@ Auth::routes();
 Route::get('/admin/home', 'HomeController@index')->name('admin_home');
 Route::get('/admin/personal-details', 'Backend\ResumeController@personaldetails')->name('personaldetails');
 Route::get('/admin/academic-details', 'Backend\ResumeController@academic')->name('academicdetails');
+Route::get('/admin/What-I-do', 'Backend\ResumeController@whatido')->name('whatido');

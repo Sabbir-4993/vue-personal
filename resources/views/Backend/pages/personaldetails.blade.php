@@ -6,10 +6,11 @@
 @endsection
 
 {{--menu show--}}
-@section('resume_show') show @endsection
+@section('show') show @endsection
 
 {{--menu active--}}
 @section('resume_active') active @endsection
+@section('personal_active') active @endsection
 
 {{--main Content--}}
 @section('content')
@@ -78,47 +79,6 @@
                                 <div class="form-group">
                                     <label for="exampleInputCareer">Career Objective:</label>
                                     <textarea type="text" class="form-control" id="exampleInputCareer" rows="10"></textarea>
-                                </div>
-                            </div>
-                            <div class="col-md-12">
-                                <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
-                                    <h6 class="m-0 font-weight-bold text-primary">Academic Summary</h6>
-                                </div>
-                                <hr class="-divide">
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="exampleInputEducation1">Level of Education</label>
-                                            <input type="text" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputInstitute">Institute Name</label>
-                                            <input type="text" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp">
-                                        </div>
-
-                                        <div class="form-group">
-                                            <label for="exampleInputPassing">Year of Passing </label>
-                                            <input type="text" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
-                                        </div>
-                                        <div class="form-group">
-                                                <label for="exampleInputPassing">Duration <span class="small">(Years)</span></label>
-                                            <input type="text" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <label for="exampleInputExamTitle">Exam/Degree Title</label>
-                                            <input type="text" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputGroup">Concentration/ Major/Group </label>
-                                            <input type="text" class="form-control" id="exampleInputGroup" aria-describedby="examHelp">
-                                        </div>
-                                        <div class="form-group">
-                                            <label for="exampleInputResult">Result</label>
-                                            <input type="text" class="form-control" id="exampleInputResult" aria-describedby="examHelp">
-                                        </div>
-                                    </div>
                                 </div>
                             </div>
                         </div>

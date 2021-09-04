@@ -6,10 +6,11 @@
 @endsection
 
 {{--menu show--}}
-@section('resume_show') show @endsection
+@section('show') show @endsection
 
 {{--menu active--}}
 @section('resume_active') active @endsection
+@section('academic_active') active @endsection
 
 {{--main Content--}}
 @section('content')
