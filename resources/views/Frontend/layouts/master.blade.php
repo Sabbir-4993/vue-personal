@@ -17,7 +17,7 @@
 {{--</div>--}}
 <!-- Preloader End -->
 
-<div class="container">
+<div class="container" id="app">
     <div class="row">
         <div class="col-lg-4 profileColumn">
             @include('Frontend.layouts.profileSidebar')
@@ -29,7 +29,7 @@
 
             <div class="sidebarOverlay"></div>
             <div class="bodyContent">
-                @yield('content')
+                <router-view></router-view>
             </div>
         </div>
     </div>

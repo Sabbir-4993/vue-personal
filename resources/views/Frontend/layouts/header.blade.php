@@ -7,6 +7,8 @@
     <meta name="viewport" content="width=device-width">
     <input type="hidden" name="_token" value="{{ csrf_token() }}" />
 
+    <link rel="stylesheet" href="{{asset('css/app.css')}}">
+
     <!-- Start Include All CSS -->
     <link rel="stylesheet" href="{{asset('frontend/assets/css/bootstrap.css')}}"/>
     <link rel="stylesheet" href="{{asset('frontend/assets/css/animate.css')}}"/>

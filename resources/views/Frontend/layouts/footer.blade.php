@@ -2,6 +2,8 @@
 <a href="javascript:void(0);" id="backtotop"><i class="icofont-bubble-up"></i></a>
 <!-- Bact To Top -->
 
+
+<script src="{{asset('js/app.js')}}"></script>
 <!-- Start Include All JS -->
 <script src="{{asset('frontend/assets/js/jquery.js')}}"></script>
 <script src="{{asset('frontend/assets/js/bootstrap.min.js')}}"></script>

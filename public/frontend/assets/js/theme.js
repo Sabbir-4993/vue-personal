@@ -160,7 +160,7 @@
         map.addMarker({
             lat: 23.744223,
             lng: 90.440060,
-            icon: 'assets/images/marker.png',
+            icon: '/assets/images/marker.png',
             animation: google.maps.Animation.DROP,
             verticalAlign: 'bottom',
             horizontalAlign: 'center',

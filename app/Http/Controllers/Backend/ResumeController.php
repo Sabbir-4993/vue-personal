@@ -15,7 +15,19 @@ class ResumeController extends Controller
         return view('Backend.pages.academicdetails');
     }
 
+    public function job(){
+        return view('Backend.pages.jobexperience');
+    }
+
     public function whatido(){
         return view('Backend.pages.what_i_do');
+    }
+
+    public function whattheysay(){
+        return view('Backend.pages.what_they_say');
+    }
+
+    public function facts(){
+        return view('Backend.pages.interestingfacts');
     }
 }
