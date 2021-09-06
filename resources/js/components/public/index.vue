@@ -7,71 +7,56 @@
                         <h2 class="sectionTitle">About Info</h2>
                     </div>
                 </div>
-                <div class="row">
+                <div class="row" v-for="details in personal_details" :key="personal_details.id">
                     <div class="col-lg-12">
                         <div class="row">
                             <div class="col-lg-6">
                                 <div class="icon_box_01">
                                     <i class="icon icon-User"></i>
                                     <h3>My Name</h3>
-                                    <p>K. Melissa Caroll</p>
+                                    <p>{{ details.name }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="icon_box_01">
                                     <i class="icon icon-Calculator"></i>
                                     <h3>My Age</h3>
-                                    <p>32 Years 241 Days</p>
+                                    <p>{{ details.birth }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="icon_box_01">
                                     <i class="icon icon-Mail"></i>
                                     <h3>Email Address</h3>
-                                    <p>k.melissa@caroll.me</p>
+                                    <p>{{ details.email_pre }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="icon_box_01">
                                     <i class="icon icon-Phone"></i>
                                     <h3>Phone Number</h3>
-                                    <p>1.800.987.6987</p>
+                                    <p>{{ details.phone_pre }}</p>
                                 </div>
                             </div>
                             <div class="col-lg-6">
                                 <div class="icon_box_01">
                                     <i class="icon icon-Pointer"></i>
                                     <h3>Address</h3>
-                                    <p><a href="https://www.google.com/maps/place/189+Lodge+Ave,+Dagenham+RM8+2HQ,+UK/@51.5438977,0.1111455,17z/data=!3m1!4b1!4m5!3m4!1s0x47d8a5c65f86bfd1:0x9f6ccecbee08b740!8m2!3d51.5438944!4d0.1133342" target="_blank">Click Here to View Map.</a></p>
+                                    <p>{{ details.address }}</p>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div class="row mt30">
+                <div class="row mt30" v-for="details in personal_details" :key="personal_details.id">
                     <div class="col-lg-12">
                         <h2 class="sectionTitle mb22">Short Bio</h2>
                     </div>
                 </div>
-                <div class="row">
-                    <div class="col-lg-6">
+                <div class="row" v-for="details in personal_details" :key="personal_details.id">
+                    <div class="col-lg-12">
                         <div class="abContent">
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                                Quis ipsum suspendisse ultrices gravida risus commodo. Quis ipsum suspendisse ultrices gravida.
-                            </p>
-                            <p>
-                                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-                                <a href="#" class="fw_500">ut labore et dolore magna</a> aliqua.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-6">
-                        <div class="abContent">
-                            <p class="mb27">
-                                Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                            </p>
-                            <img class="signImg" src="/frontend/assets/images/home_01/3.png" alt=""/>
+                            <p>{{ details.career_objective }}</p>
                         </div>
                     </div>
                 </div>
@@ -395,7 +380,23 @@
 
 <script>
 export default {
-    name: "index.vue"
+    name: "index.vue",
+
+    data(){
+        return{
+            personal_details: [],
+        }
+    },
+    methods:{
+        getPersonalDetails(){
+            axios.get('/admin/personal-details')
+            .then(({data}) => (this.personal_details = data))
+            .catch()
+        }
+    },
+    created(){
+        this.getPersonalDetails();
+    }
 }
 </script>
 

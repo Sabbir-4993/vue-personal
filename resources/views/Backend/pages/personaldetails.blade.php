@@ -23,12 +23,20 @@
         </ol>
     </div>
 
+    <div id="message">
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <form>
+                    <form action="{{route('personal-details.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="row col-md-12">
                             <div class="col-md-6">
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -37,24 +45,24 @@
                                 <hr class="-divide">
                                 <div class="form-group">
                                     <label for="exampleInputName">Full Name</label>
-                                    <input type="text" class="form-control" id="exampleInputName" aria-describedby="nameHelp">
+                                    <input type="text" class="form-control" name="name" id="exampleInputName" aria-describedby="nameHelp">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail1">Primary Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" name="email_pre" id="exampleInputEmail1" aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputEmail2">Alternate Email address</label>
-                                    <input type="email" class="form-control" id="exampleInputEmail2" aria-describedby="emailHelp">
+                                    <input type="email" class="form-control" name="email_alt"  id="exampleInputEmail2" aria-describedby="emailHelp">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputMobile1">Primary Mobile No</label>
-                                    <input type="text" class="form-control" id="exampleInputMobile1" aria-describedby="phoneHelp"
+                                    <input type="text" class="form-control" name="phone_pre" id="exampleInputMobile1" aria-describedby="phoneHelp"
                                            placeholder="+880" value="+880">
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputMobile2">Secondary Mobile No</label>
-                                    <input type="text" class="form-control" id="exampleInputMobile2" aria-describedby="phoneHelp"
+                                    <input type="text" class="form-control" name="phone_alt" id="exampleInputMobile2" aria-describedby="phoneHelp"
                                            placeholder="+880" value="+880">
                                 </div>
                                 <div class="form-group" id="simple-date1">
@@ -63,12 +71,12 @@
                                         <div class="input-group-prepend">
                                             <span class="input-group-text"><i class="fas fa-calendar"></i></span>
                                         </div>
-                                        <input type="text" class="form-control" value="01/06/2020" id="simpleDataInput">
+                                        <input type="text" class="form-control" name="birth" value="05/07/1996" id="simpleDataInput">
                                     </div>
                                 </div>
                                 <div class="form-group">
                                     <label for="exampleInputAddress">Address</label>
-                                    <textarea type="text" class="form-control" id="exampleInputAddress"></textarea>
+                                    <textarea type="text" class="form-control" name="address" id="exampleInputAddress"></textarea>
                                 </div>
                             </div>
                             <div class="col-md-6">
@@ -78,7 +86,7 @@
                                 <hr class="-divide">
                                 <div class="form-group">
                                     <label for="exampleInputCareer">Career Objective:</label>
-                                    <textarea type="text" class="form-control" id="exampleInputCareer" rows="10"></textarea>
+                                    <textarea type="text" class="form-control" name="career_objective" id="exampleInputCareer" rows="10"></textarea>
                                 </div>
                             </div>
                         </div>
