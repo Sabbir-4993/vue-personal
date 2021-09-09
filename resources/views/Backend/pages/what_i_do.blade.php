@@ -21,13 +21,20 @@
             <li class="breadcrumb-item active" aria-current="page">What i do</li>
         </ol>
     </div>
-
+    <div id="message">
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <form>
+                    <form action="{{route('What-I-do.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -38,21 +45,21 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="exampleInputEducation1">Topic</label>
-                                            <input type="text" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp" placeholder="ex: UI Design">
+                                            <input type="text" name="topic" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp" placeholder="ex: UI Design">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputInstitute">Sub Topic</label>
-                                            <input type="text" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" placeholder="ex: Mobile & Web">
+                                            <input type="text" name="icon" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" placeholder="ex: Mobile & Web">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="exampleInputExamTitle">Icon <span class="small"><a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">(Icon List)</a></span></label>
-                                            <input type="text" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp" value="icon " placeholder="ex: icon icon-Phone">
+                                            <input type="text" name="sub_topic" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp" value="icon " placeholder="ex: icon icon-Phone">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputResult">Content</label>
-                                            <textarea type="text" class="form-control" id="exampleInputResult" aria-describedby="examHelp"></textarea>
+                                            <textarea type="text" name="details" class="form-control" id="exampleInputResult" aria-describedby="examHelp"></textarea>
                                         </div>
                                     </div>
                                 </div>
@@ -77,22 +84,20 @@
                     <table class="table align-items-center table-flush table-hover" id="dataTableHover">
                         <thead class="thead-light">
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Topic</th>
+                            <th>Icon</th>
+                            <th>Sub Topic</th>
+                            <th>Content</th>
+                            <th>Action</th>
                         </tr>
                         </thead>
                         <tfoot>
                         <tr>
-                            <th>Name</th>
-                            <th>Position</th>
-                            <th>Office</th>
-                            <th>Age</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
+                            <th>Topic</th>
+                            <th>Icon</th>
+                            <th>Sub Topic</th>
+                            <th>Content</th>
+                            <th>Action</th>
                         </tr>
                         </tfoot>
                         <tbody>
@@ -100,9 +105,8 @@
                             <td>Tiger Nixon</td>
                             <td>System Architect</td>
                             <td>Edinburgh</td>
-                            <td>61</td>
-                            <td>2011/04/25</td>
-                            <td>$320,800</td>
+                            <td>Edinburgh</td>
+                            <td><button class="btn btn-danger">Delete</button></td>
                         </tr>
                         </tbody>
                     </table>

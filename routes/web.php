@@ -22,11 +22,11 @@ Route::group(['prefix' => 'admin'], function () {
 });
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
-    Route::resource('/personal-details', 'Api\PersonalDetailsController');
-    Route::get('/academic-details', 'Backend\ResumeController@academic')->name('academicdetails');
-    Route::get('/Job-experience', 'Backend\ResumeController@job')->name('jobexperience');
-    Route::get('/What-I-do', 'Backend\ResumeController@whatido')->name('whatido');
-    Route::get('/What-they_say', 'Backend\ResumeController@whattheysay')->name('whattheysay');
+    Route::resource('personal-details', 'Backend\PersonalDetailsController');
+    Route::resource('academic-details', 'Backend\AcademicDetailsController');
+    Route::resource('job-experience', 'Backend\JobExperienceController');
+    Route::resource('What-I-do', 'Backend\WhatIDoController');
+    Route::resource('testimonials', 'Backend\TestimonialController');
     Route::get('/interesting-facts', 'Backend\ResumeController@facts')->name('facts');
 });
 

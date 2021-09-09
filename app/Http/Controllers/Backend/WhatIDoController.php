@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\PersonalDetails;
 use Illuminate\Http\Request;
 
-class PersonalDetailsController extends Controller
+class WhatIDoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class PersonalDetailsController extends Controller
      */
     public function index()
     {
-        $personaldetails = \App\Model\PersonalDetails::all();
-        return response()->json($personaldetails);
+        return view('Backend.pages.what_i_do');
     }
 
     /**
@@ -37,7 +35,21 @@ class PersonalDetailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'topic' => 'required',
+            'icon' => 'required',
+            'sub_topic' => 'required',
+            'details' => 'required',
+        ]);
 
+        $details = new \App\Model\WhatIDo();
+        $details->topic = $request->topic;
+        $details->icon = $request->icon;
+        $details->sub_topic = $request->sub_topic;
+        $details->details = $request->details;
+
+        $details->save();
+        return redirect()->back()->with('message', 'What I Do Section Submit Successfully');
     }
 
     /**

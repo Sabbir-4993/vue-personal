@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\PersonalDetails;
 use Illuminate\Http\Request;
 
-class PersonalDetailsController extends Controller
+class JobExperienceController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class PersonalDetailsController extends Controller
      */
     public function index()
     {
-        $personaldetails = \App\Model\PersonalDetails::all();
-        return response()->json($personaldetails);
+        return view('Backend.pages.jobexperience');
     }
 
     /**
@@ -37,7 +35,21 @@ class PersonalDetailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'company_name' => 'required',
+            'designation' => 'required',
+            'job_duration' => 'required',
+            'job_description' => 'required',
+        ]);
 
+        $details = new \App\Model\JobExperience();
+        $details->company_name = $request->company_name;
+        $details->designation = $request->designation;
+        $details->job_duration = $request->job_duration;
+        $details->job_description = $request->job_description;
+
+        $details->save();
+        return redirect()->back()->with('message', 'Academic Details Submit Successfully');
     }
 
     /**

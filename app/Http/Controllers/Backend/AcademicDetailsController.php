@@ -1,12 +1,11 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\PersonalDetails;
 use Illuminate\Http\Request;
 
-class PersonalDetailsController extends Controller
+class AcademicDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +14,7 @@ class PersonalDetailsController extends Controller
      */
     public function index()
     {
-        $personaldetails = \App\Model\PersonalDetails::all();
-        return response()->json($personaldetails);
+        return view('Backend.pages.academicdetails');
     }
 
     /**
@@ -37,7 +35,27 @@ class PersonalDetailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'education_name' => 'required',
+            'degree_title' => 'required',
+            'institute_name' => 'required',
+            'subject' => 'required',
+            'passing' => 'required',
+            'result' => 'required',
+            'duration' => 'required',
+        ]);
 
+        $details = new \App\Model\AcademicDetails();
+        $details->education_name = $request->education_name;
+        $details->degree_title = $request->degree_title;
+        $details->institute_name = $request->institute_name;
+        $details->subject = $request->subject;
+        $details->passing = $request->passing;
+        $details->result = $request->result;
+        $details->duration = $request->duration;
+
+        $details->save();
+        return redirect()->back()->with('message', 'Academic Details Submit Successfully');
     }
 
     /**

@@ -1,9 +1,8 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\PersonalDetails;
 use Illuminate\Http\Request;
 
 class PersonalDetailsController extends Controller
@@ -15,8 +14,7 @@ class PersonalDetailsController extends Controller
      */
     public function index()
     {
-        $personaldetails = \App\Model\PersonalDetails::all();
-        return response()->json($personaldetails);
+        return view('Backend.pages.personaldetails');
     }
 
     /**
@@ -37,7 +35,29 @@ class PersonalDetailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'name' => 'required',
+            'email_pre' => 'required',
+            'email_alt' => '',
+            'phone_pre' => 'required',
+            'phone_alt' => '',
+            'birth' => 'required',
+            'address' => 'required',
+            'career_objective' => 'required',
+        ]);
 
+        $details = new \App\Model\PersonalDetails();
+        $details->name = $request->name;
+        $details->email_pre = $request->email_pre;
+        $details->email_alt = $request->email_alt;
+        $details->phone_pre = $request->phone_pre;
+        $details->phone_alt = $request->phone_alt;
+        $details->birth = $request->birth;
+        $details->address = $request->address;
+        $details->career_objective = $request->career_objective;
+
+        $details->save();
+        return redirect()->back()->with('message', 'Personal Details Submit Successfully');
     }
 
     /**

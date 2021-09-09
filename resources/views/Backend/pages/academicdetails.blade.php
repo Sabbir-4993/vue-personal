@@ -21,13 +21,20 @@
             <li class="breadcrumb-item active" aria-current="page">Academic</li>
         </ol>
     </div>
-
+    <div id="message">
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <form>
+                    <form action="{{route('academic-details.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -38,34 +45,34 @@
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="exampleInputEducation1">Level of Education</label>
-                                            <input type="text" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp">
+                                            <input type="text" name="education_name" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputInstitute">Institute Name</label>
-                                            <input type="text" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp">
+                                            <input type="text" name="institute_name" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleInputPassing">Year of Passing </label>
-                                            <input type="text" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
+                                            <input type="text" name="passing" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassing">Duration <span class="small">(Years)</span></label>
-                                            <input type="text" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
+                                            <input type="text" name="duration" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="exampleInputExamTitle">Exam/Degree Title</label>
-                                            <input type="text" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp">
+                                            <input type="text" name="degree_title" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputGroup">Concentration/ Major/Group </label>
-                                            <input type="text" class="form-control" id="exampleInputGroup" aria-describedby="examHelp">
+                                            <input type="text" name="subject" class="form-control" id="exampleInputGroup" aria-describedby="examHelp">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputResult">Result</label>
-                                            <input type="text" class="form-control" id="exampleInputResult" aria-describedby="examHelp">
+                                            <input type="text" name="result" class="form-control" id="exampleInputResult" aria-describedby="examHelp">
                                         </div>
                                     </div>
                                 </div>

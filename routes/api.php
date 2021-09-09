@@ -18,6 +18,6 @@ use Illuminate\Support\Facades\Route;
 //    return $request->user();
 //});
 
-    Route::get('/admin/home', 'HomeController@index')->name('admin_home');
+//    Route::get('/admin/home', 'HomeController@index')->name('admin_home');
 
 //    Route::apiResource('/admin/personal-details', 'Api\PersonalDetailsController');

@@ -24,10 +24,10 @@
         <div id="collapseResume" class="collapse @yield('show')" aria-labelledby="headingResume" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item @yield('personal_active')" href="{{route('personal-details.index')}}">Personal Details</a>
-                <a class="collapse-item  @yield('academic_active')" href="{{route('academicdetails')}}">Academic Details</a>
-                <a class="collapse-item  @yield('job_active')" href="{{route('jobexperience')}}">Job Experience</a>
-                <a class="collapse-item  @yield('what_i_do_active')" href="{{route('whatido')}}">What I Do?</a>
-                <a class="collapse-item  @yield('what_they_say_active')" href="{{route('whattheysay')}}">What They Say?</a>
+                <a class="collapse-item  @yield('academic_active')" href="{{route('academic-details.index')}}">Academic Details</a>
+                <a class="collapse-item  @yield('job_active')" href="{{route('job-experience.index')}}">Job Experience</a>
+                <a class="collapse-item  @yield('what_i_do_active')" href="{{route('What-I-do.index')}}">What I Do?</a>
+                <a class="collapse-item  @yield('what_they_say_active')" href="{{route('testimonials.index')}}">What They Say?</a>
                 <a class="collapse-item  @yield('facts_active')" href="{{route('facts')}}">Interesting Facts</a>
             </div>
         </div>
