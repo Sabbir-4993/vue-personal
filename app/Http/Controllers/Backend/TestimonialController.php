@@ -47,9 +47,9 @@ class TestimonialController extends Controller
             'name' => $request->name,
             'designation' => $request->designation,
             'comment' => $request->comment,
+            'image' => $request->image,
         ]);
 
-//        dd($current_id);
 
         if ($request->hasFile('image')) {
             //upload profile photo start

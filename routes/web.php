@@ -27,7 +27,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('job-experience', 'Backend\JobExperienceController');
     Route::resource('What-I-do', 'Backend\WhatIDoController');
     Route::resource('testimonials', 'Backend\TestimonialController');
-    Route::get('/interesting-facts', 'Backend\ResumeController@facts')->name('facts');
+    Route::resource('interesting-facts', 'Backend\CounterController');
 });
 
 

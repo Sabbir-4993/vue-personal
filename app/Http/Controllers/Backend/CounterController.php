@@ -1,12 +1,12 @@
 <?php
 
-namespace App\Http\Controllers\Api;
+namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
-use App\PersonalDetails;
+use App\Model\Counter;
 use Illuminate\Http\Request;
 
-class PersonalDetailsController extends Controller
+class CounterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -15,8 +15,7 @@ class PersonalDetailsController extends Controller
      */
     public function index()
     {
-        $personaldetails = \App\Model\PersonalDetails::all();
-        return response()->json($personaldetails);
+        return view('Backend.pages.interestingfacts');
     }
 
     /**
@@ -37,7 +36,19 @@ class PersonalDetailsController extends Controller
      */
     public function store(Request $request)
     {
+        $request->validate([
+            'topic' => 'required',
+            'counter' => 'required',
+        ]);
 
+        $details = new Counter();
+        $details->topic = $request->topic;
+        $details->counter = $request->counter;
+
+        $details->save();
+
+
+        return redirect()->back()->with('message', 'Counter Submit Successfully');
     }
 
     /**

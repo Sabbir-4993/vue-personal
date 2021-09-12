@@ -28,7 +28,7 @@
                 <a class="collapse-item  @yield('job_active')" href="{{route('job-experience.index')}}">Job Experience</a>
                 <a class="collapse-item  @yield('what_i_do_active')" href="{{route('What-I-do.index')}}">What I Do?</a>
                 <a class="collapse-item  @yield('what_they_say_active')" href="{{route('testimonials.index')}}">What They Say?</a>
-                <a class="collapse-item  @yield('facts_active')" href="{{route('facts')}}">Interesting Facts</a>
+                <a class="collapse-item  @yield('facts_active')" href="{{route('interesting-facts.index')}}">Interesting Facts</a>
             </div>
         </div>
     </li>

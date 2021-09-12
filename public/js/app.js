@@ -2264,158 +2264,45 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index.vue",
   data: function data() {
     return {
-      personal_details: []
+      personal_details: [],
+      what_i_do: [],
+      testimonial: []
     };
   },
   methods: {
     getPersonalDetails: function getPersonalDetails() {
       var _this = this;
 
-      axios.get('/admin/personal-details').then(function (_ref) {
+      axios.get('api/personal-details').then(function (_ref) {
         var data = _ref.data;
         return _this.personal_details = data;
+      })["catch"]();
+    },
+    getWhatIDo: function getWhatIDo() {
+      var _this2 = this;
+
+      axios.get('api/what-I-do').then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.what_i_do = data;
+      })["catch"]();
+    },
+    getTestimonial: function getTestimonial() {
+      var _this3 = this;
+
+      axios.get('api/testimonials').then(function (_ref3) {
+        var data = _ref3.data;
+        return _this3.testimonial = data;
       })["catch"]();
     }
   },
   created: function created() {
     this.getPersonalDetails();
+    this.getWhatIDo();
+    this.getTestimonial();
   }
 });
 
@@ -38874,11 +38761,76 @@ var render = function() {
           _vm._v(" "),
           _vm._m(2),
           _vm._v(" "),
-          _vm._m(3),
+          _c(
+            "div",
+            { staticClass: "row itemMb30" },
+            _vm._l(_vm.what_i_do, function(whatido) {
+              return _c(
+                "div",
+                { key: _vm.what_i_do.id, staticClass: "col-lg-4" },
+                [
+                  _c("div", { staticClass: "icon_box_02" }, [
+                    _vm._m(3, true),
+                    _vm._v(" "),
+                    _c("h3", [
+                      _c("a", { attrs: { href: "javascript:void(0);" } }, [
+                        _vm._v(_vm._s(whatido.topic))
+                      ])
+                    ]),
+                    _vm._v(" "),
+                    _c("h5", [_vm._v(_vm._s(whatido.sub_topic))]),
+                    _vm._v(" "),
+                    _c("p", [
+                      _vm._v(
+                        "\n                                " +
+                          _vm._s(whatido.details) +
+                          "\n                            "
+                      )
+                    ])
+                  ])
+                ]
+              )
+            }),
+            0
+          ),
           _vm._v(" "),
           _vm._m(4),
           _vm._v(" "),
-          _vm._m(5),
+          _c("div", { staticClass: "row" }, [
+            _c("div", { staticClass: "col-lg-12" }, [
+              _c(
+                "div",
+                { staticClass: "testimonialSlider owl-carousel" },
+                _vm._l(_vm.testimonial, function(say) {
+                  return _c(
+                    "div",
+                    {
+                      key: _vm.testimonial.id,
+                      staticClass: "singleTestimonial"
+                    },
+                    [
+                      _vm._m(5, true),
+                      _vm._v(" "),
+                      _c("div", { staticClass: "testicon" }, [
+                        _vm._v(
+                          "\n                                        " +
+                            _vm._s(say.comment) +
+                            "\n"
+                        ),
+                        _vm._v(" "),
+                        _c("div", { staticClass: "tesAuthor" }, [
+                          _c("h5", [_vm._v(_vm._s(say.name) + ",")]),
+                          _vm._v(" "),
+                          _c("h6", [_vm._v(_vm._s(say.designation))])
+                        ])
+                      ])
+                    ]
+                  )
+                }),
+                0
+              )
+            ])
+          ]),
           _vm._v(" "),
           _vm._m(6),
           _vm._v(" "),
@@ -38886,11 +38838,7 @@ var render = function() {
           _vm._v(" "),
           _vm._m(8),
           _vm._v(" "),
-          _vm._m(9),
-          _vm._v(" "),
-          _vm._m(10),
-          _vm._v(" "),
-          _vm._m(11)
+          _vm._m(9)
         ],
         2
       )
@@ -38948,138 +38896,8 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row itemMb30" }, [
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "icon_box_02" }, [
-          _c("div", { staticClass: "i_div" }, [
-            _c("i", { staticClass: "icon icon-Settings" })
-          ]),
-          _vm._v(" "),
-          _c("h3", [
-            _c("a", { attrs: { href: "javascript:void(0);" } }, [
-              _vm._v("Web Development")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("from scratch")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.\n                        "
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "icon_box_02" }, [
-          _c("div", { staticClass: "i_div" }, [
-            _c("i", { staticClass: "icon icon-Pen" })
-          ]),
-          _vm._v(" "),
-          _c("h3", [
-            _c("a", { attrs: { href: "javascript:void(0);" } }, [
-              _vm._v("UX recherche")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("data collection")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.\n                        "
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "icon_box_02" }, [
-          _c("div", { staticClass: "i_div" }, [
-            _c("i", { staticClass: "icon icon-Layers" })
-          ]),
-          _vm._v(" "),
-          _c("h3", [
-            _c("a", { attrs: { href: "javascript:void(0);" } }, [
-              _vm._v("UI design")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("creativ design")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.\n                        "
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "icon_box_02" }, [
-          _c("div", { staticClass: "i_div" }, [
-            _c("i", { staticClass: "icon icon-Phone" })
-          ]),
-          _vm._v(" "),
-          _c("h3", [
-            _c("a", { attrs: { href: "javascript:void(0);" } }, [
-              _vm._v("Application")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("stand alone")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.\n                        "
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "icon_box_02" }, [
-          _c("div", { staticClass: "i_div" }, [
-            _c("i", { staticClass: "icon icon-Share" })
-          ]),
-          _vm._v(" "),
-          _c("h3", [
-            _c("a", { attrs: { href: "javascript:void(0);" } }, [
-              _vm._v("Social Media")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("digital product")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.\n                        "
-            )
-          ])
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "icon_box_02" }, [
-          _c("div", { staticClass: "i_div" }, [
-            _c("i", { staticClass: "icon icon-ChartUp" })
-          ]),
-          _vm._v(" "),
-          _c("h3", [
-            _c("a", { attrs: { href: "javascript:void(0);" } }, [
-              _vm._v("Search Engine")
-            ])
-          ]),
-          _vm._v(" "),
-          _c("h5", [_vm._v("page rank")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.\n                        "
-            )
-          ])
-        ])
-      ])
+    return _c("div", { staticClass: "i_div" }, [
+      _c("i", { staticClass: "icon icon-Settings" })
     ])
   },
   function() {
@@ -39096,180 +38914,7 @@ var staticRenderFns = [
     var _vm = this
     var _h = _vm.$createElement
     var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-12" }, [
-        _c("div", { staticClass: "testimonialSlider owl-carousel" }, [
-          _c("div", { staticClass: "singleTestimonial" }, [
-            _c("div", { staticClass: "testiImg" }, [
-              _c("img", {
-                attrs: { src: "/frontend/assets/images/author/1.jpg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "testicon" }, [
-              _c("p", [
-                _vm._v(
-                  "\n                                    They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought\n                                    to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.\n                                    Maybe you and me were never meant to be.\n                                "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "tesAuthor" }, [
-                _c("h5", [_vm._v("Edward Johnson,")]),
-                _vm._v(" "),
-                _c("h6", [_vm._v("themewar.com")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "singleTestimonial" }, [
-            _c("div", { staticClass: "testiImg" }, [
-              _c("img", {
-                attrs: { src: "/frontend/assets/images/author/2.jpg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "testicon" }, [
-              _c("p", [
-                _vm._v(
-                  "\n                                    They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought\n                                    to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.\n                                    Maybe you and me were never meant to be.\n                                "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "tesAuthor" }, [
-                _c("h5", [_vm._v("Mosharof Khondoker,")]),
-                _vm._v(" "),
-                _c("h6", [_vm._v("themewar.com")])
-              ])
-            ])
-          ]),
-          _vm._v(" "),
-          _c("div", { staticClass: "singleTestimonial" }, [
-            _c("div", { staticClass: "testiImg" }, [
-              _c("img", {
-                attrs: { src: "/frontend/assets/images/author/3.jpg", alt: "" }
-              }),
-              _vm._v(" "),
-              _c("span")
-            ]),
-            _vm._v(" "),
-            _c("div", { staticClass: "testicon" }, [
-              _c("p", [
-                _vm._v(
-                  "\n                                    They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought\n                                    to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.\n                                    Maybe you and me were never meant to be.\n                                "
-                )
-              ]),
-              _vm._v(" "),
-              _c("div", { staticClass: "tesAuthor" }, [
-                _c("h5", [_vm._v("Sara Ferdoush,")]),
-                _vm._v(" "),
-                _c("h6", [_vm._v("themewar.com")])
-              ])
-            ])
-          ])
-        ])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mt60" }, [
-      _c("div", { staticClass: "col-lg-12" }, [
-        _c("h2", { staticClass: "sectionTitle" }, [_vm._v("Fair Price")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row" }, [
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "pricingTable text-center" }, [
-          _c("i", { staticClass: "icon icon-Car" }),
-          _vm._v(" "),
-          _c("h5", [_vm._v("Starter Package")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Suitable for small business or Organizations.\n                        "
-            )
-          ]),
-          _vm._v(" "),
-          _c("h2", [_vm._v("$27.00")]),
-          _vm._v(" "),
-          _c("h6", [_vm._v("per project")]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "btt_link", attrs: { href: "contact.html" } },
-            [
-              _c("i", { staticClass: "icon icon-OpenedLock" }),
-              _c("span", [_vm._v("Let's Start")])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "pricingTable text-center" }, [
-          _c("i", { staticClass: "icon icon-Truck" }),
-          _vm._v(" "),
-          _c("h5", [_vm._v("Business Package")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Suitable for medium business or Organizations.\n                        "
-            )
-          ]),
-          _vm._v(" "),
-          _c("h2", [_vm._v("$47.00")]),
-          _vm._v(" "),
-          _c("h6", [_vm._v("per project")]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "btt_link", attrs: { href: "contact.html" } },
-            [
-              _c("i", { staticClass: "icon icon-OpenedLock" }),
-              _c("span", [_vm._v("Let's Start")])
-            ]
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c("div", { staticClass: "pricingTable text-center" }, [
-          _c("i", { staticClass: "icon icon-BigTruck" }),
-          _vm._v(" "),
-          _c("h5", [_vm._v("Pro Package")]),
-          _vm._v(" "),
-          _c("p", [
-            _vm._v(
-              "\n                            Suitable for any business or Organizations.\n                        "
-            )
-          ]),
-          _vm._v(" "),
-          _c("h2", [_vm._v("$97.00")]),
-          _vm._v(" "),
-          _c("h6", [_vm._v("per project")]),
-          _vm._v(" "),
-          _c(
-            "a",
-            { staticClass: "btt_link", attrs: { href: "contact.html" } },
-            [
-              _c("i", { staticClass: "icon icon-OpenedLock" }),
-              _c("span", [_vm._v("Let's Start")])
-            ]
-          )
-        ])
-      ])
-    ])
+    return _c("div", { staticClass: "testiImg" }, [_c("span")])
   },
   function() {
     var _vm = this
@@ -39553,12 +39198,12 @@ var staticRenderFns = [
           "div",
           {
             staticClass: "icon_box_03 text-center hasCounter",
-            attrs: { "data-count": "2" }
+            attrs: { "data-count": "2000" }
           },
           [
             _c("div", { staticClass: "icon_div" }, [
               _c("i", [
-                _c("span", { staticClass: "counter" }, [_vm._v("2")]),
+                _c("span", { staticClass: "counter" }, [_vm._v("2000")]),
                 _vm._v("K+")
               ])
             ]),

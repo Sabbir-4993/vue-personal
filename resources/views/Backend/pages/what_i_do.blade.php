@@ -49,13 +49,13 @@
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputInstitute">Sub Topic</label>
-                                            <input type="text" name="icon" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" placeholder="ex: Mobile & Web">
+                                            <input type="text" name="sub_topic" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" placeholder="ex: Mobile & Web">
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
                                             <label for="exampleInputExamTitle">Icon <span class="small"><a href="http://docteur-abrar.com/wp-content/themes/thunder/admin/stroke-gap-icons/" target="_blank">(Icon List)</a></span></label>
-                                            <input type="text" name="sub_topic" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp" value="icon " placeholder="ex: icon icon-Phone">
+                                            <input type="text" name="icon" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp" value="icon" placeholder="ex: icon icon-Phone">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputResult">Content</label>

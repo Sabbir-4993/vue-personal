@@ -25,6 +25,6 @@ class ResumeController extends Controller
     }
 
     public function facts(){
-        return view('Backend.pages.interestingfacts');
+
     }
 }

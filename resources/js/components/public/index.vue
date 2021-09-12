@@ -66,75 +66,15 @@
                     </div>
                 </div>
                 <div class="row itemMb30">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" v-for="whatido in what_i_do" :key="what_i_do.id">
                         <div class="icon_box_02">
                             <div class="i_div">
                                 <i class="icon icon-Settings"></i>
                             </div>
-                            <h3><a href="javascript:void(0);">Web Development</a></h3>
-                            <h5>from scratch</h5>
+                            <h3><a href="javascript:void(0);">{{whatido.topic}}</a></h3>
+                            <h5>{{ whatido.sub_topic }}</h5>
                             <p>
-                                Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_02">
-                            <div class="i_div">
-                                <i class="icon icon-Pen"></i>
-                            </div>
-                            <h3><a href="javascript:void(0);">UX recherche</a></h3>
-                            <h5>data collection</h5>
-                            <p>
-                                Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_02">
-                            <div class="i_div">
-                                <i class="icon icon-Layers"></i>
-                            </div>
-                            <h3><a href="javascript:void(0);">UI design</a></h3>
-                            <h5>creativ design</h5>
-                            <p>
-                                Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_02">
-                            <div class="i_div">
-                                <i class="icon icon-Phone"></i>
-                            </div>
-                            <h3><a href="javascript:void(0);">Application</a></h3>
-                            <h5>stand alone</h5>
-                            <p>
-                                Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_02">
-                            <div class="i_div">
-                                <i class="icon icon-Share"></i>
-                            </div>
-                            <h3><a href="javascript:void(0);">Social Media</a></h3>
-                            <h5>digital product</h5>
-                            <p>
-                                Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_02">
-                            <div class="i_div">
-                                <i class="icon icon-ChartUp"></i>
-                            </div>
-                            <h3><a href="javascript:void(0);">Search Engine</a></h3>
-                            <h5>page rank</h5>
-                            <p>
-                                Sunt explicabo. Nemo enim ipsam voluptatem quia sit voluptas aspernatur.
+                                {{ whatido.details }}
                             </p>
                         </div>
                     </div>
@@ -147,91 +87,18 @@
                 <div class="row">
                     <div class="col-lg-12">
                         <div class="testimonialSlider owl-carousel">
-                            <div class="singleTestimonial">
+                            <div class="singleTestimonial" v-for="say in testimonial" :key="testimonial.id">
                                 <div class="testiImg">
-                                    <img src="/frontend/assets/images/author/1.jpg" alt="">
+<!--                                    <img :src="'./storage/uploads/testimonial/' + say.image" alt="">-->
                                     <span></span>
                                 </div>
                                 <div class="testicon">
-                                    <p>
-                                        They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought
-                                        to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.
-                                        Maybe you and me were never meant to be.
-                                    </p>
-                                    <div class="tesAuthor"><h5>Edward Johnson,</h5> <h6>themewar.com</h6></div>
+<!--                                    <p>-->
+                                        {{ say.comment  }}
+<!--                                    </p>-->
+                                    <div class="tesAuthor"><h5>{{ say.name }},</h5> <h6>{{ say.designation }}</h6></div>
                                 </div>
                             </div>
-                            <div class="singleTestimonial">
-                                <div class="testiImg">
-                                    <img src="/frontend/assets/images/author/2.jpg" alt="">
-                                    <span></span>
-                                </div>
-                                <div class="testicon">
-                                    <p>
-                                        They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought
-                                        to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.
-                                        Maybe you and me were never meant to be.
-                                    </p>
-                                    <div class="tesAuthor"><h5>Mosharof Khondoker,</h5> <h6>themewar.com</h6></div>
-                                </div>
-                            </div>
-                            <div class="singleTestimonial">
-                                <div class="testiImg">
-                                    <img src="/frontend/assets/images/author/3.jpg" alt="">
-                                    <span></span>
-                                </div>
-                                <div class="testicon">
-                                    <p>
-                                        They'll have to make the best of things its an uphill climb. Said Californ'y is the place you ought
-                                        to be So they loaded up the truck and moved to Beverly. Hills that is. Swimmin' pools movie stars.
-                                        Maybe you and me were never meant to be.
-                                    </p>
-                                    <div class="tesAuthor"><h5>Sara Ferdoush,</h5> <h6>themewar.com</h6></div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="row mt60">
-                    <div class="col-lg-12">
-                        <h2 class="sectionTitle">Fair Price</h2>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-lg-4">
-                        <div class="pricingTable text-center">
-                            <i class="icon icon-Car"></i>
-                            <h5>Starter Package</h5>
-                            <p>
-                                Suitable for small business or Organizations.
-                            </p>
-                            <h2>$27.00</h2>
-                            <h6>per project</h6>
-                            <a href="contact.html" class="btt_link"><i class="icon icon-OpenedLock"></i><span>Let's Start</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="pricingTable text-center">
-                            <i class="icon icon-Truck"></i>
-                            <h5>Business Package</h5>
-                            <p>
-                                Suitable for medium business or Organizations.
-                            </p>
-                            <h2>$47.00</h2>
-                            <h6>per project</h6>
-                            <a href="contact.html" class="btt_link"><i class="icon icon-OpenedLock"></i><span>Let's Start</span></a>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="pricingTable text-center">
-                            <i class="icon icon-BigTruck"></i>
-                            <h5>Pro Package</h5>
-                            <p>
-                                Suitable for any business or Organizations.
-                            </p>
-                            <h2>$97.00</h2>
-                            <h6>per project</h6>
-                            <a href="contact.html" class="btt_link"><i class="icon icon-OpenedLock"></i><span>Let's Start</span></a>
                         </div>
                     </div>
                 </div>
@@ -356,9 +223,9 @@
                         </div>
                     </div>
                     <div class="col-lg-4">
-                        <div class="icon_box_03 text-center hasCounter" data-count="2">
+                        <div class="icon_box_03 text-center hasCounter" data-count="2000">
                             <div class="icon_div">
-                                <i><span class="counter">2</span>K+</i>
+                                <i><span class="counter">2000</span>K+</i>
                             </div>
                             <h5>Happy Customers</h5>
                         </div>
@@ -385,17 +252,31 @@ export default {
     data(){
         return{
             personal_details: [],
+            what_i_do: [],
+            testimonial: [],
         }
     },
     methods:{
         getPersonalDetails(){
-            axios.get('/admin/personal-details')
+            axios.get('api/personal-details')
             .then(({data}) => (this.personal_details = data))
             .catch()
-        }
+        },
+        getWhatIDo(){
+            axios.get('api/what-I-do')
+            .then(({data}) => (this.what_i_do = data))
+            .catch()
+        },
+        getTestimonial(){
+            axios.get('api/testimonials')
+            .then(({data}) => (this.testimonial = data))
+            .catch()
+        },
     },
     created(){
         this.getPersonalDetails();
+        this.getWhatIDo();
+        this.getTestimonial();
     }
 }
 </script>

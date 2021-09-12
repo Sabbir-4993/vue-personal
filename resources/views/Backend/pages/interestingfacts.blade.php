@@ -21,13 +21,20 @@
             <li class="breadcrumb-item active" aria-current="page">Interesting Facts</li>
         </ol>
     </div>
-
+    <div id="message">
+        @if (Session::has('message'))
+            <div class="alert alert-success">
+                {{ Session::get('message') }}
+            </div>
+        @endif
+    </div>
     <div class="row">
         <div class="col-lg-12">
             <!-- Form Basic -->
             <div class="card mb-4">
                 <div class="card-body">
-                    <form>
+                    <form action="{{route('interesting-facts.store')}}" method="POST" enctype="multipart/form-data">
+                        @csrf
                         <div class="row">
                             <div class="col-md-12">
                                 <div class="card-header py-3 d-flex flex-row align-items-center justify-content-between">
@@ -37,15 +44,15 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="exampleInputEducation1">Name</label>
-                                            <input type="text" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp" placeholder="ex: UI Design">
+                                            <label for="exampleInputEducation1">Topic Name</label>
+                                            <input type="text" name="topic" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp" placeholder="ex: UI Design">
                                         </div>
 
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="exampleInputInstitute">Year</label>
-                                            <input type="text" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" placeholder="ex: 5">
+                                            <label for="exampleInputInstitute">Counter</label>
+                                            <input type="text" name="counter" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" placeholder="ex: 5">
                                         </div>
                                     </div>
                                 </div>
