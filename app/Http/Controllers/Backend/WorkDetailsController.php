@@ -3,9 +3,10 @@
 namespace App\Http\Controllers\Backend;
 
 use App\Http\Controllers\Controller;
+use App\Model\WorkDetails;
 use Illuminate\Http\Request;
 
-class AcademicDetailsController extends Controller
+class WorkDetailsController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +15,7 @@ class AcademicDetailsController extends Controller
      */
     public function index()
     {
-        return view('Backend.pages.academicdetails');
+        return view('Backend.pages.workdetails');
     }
 
     /**
@@ -36,26 +37,20 @@ class AcademicDetailsController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'edu_name_title' => 'required',
-            'institute_name' => 'required',
-            'subject' => '',
-            'passing' => 'required',
-            'result' => 'required',
-            'duration' => '',
-            'details' => '',
+            'company_name' => 'required',
+            'designation' => 'required',
+            'from_to' => 'required',
+            'description' => 'required',
         ]);
 
-        $details = new \App\Model\AcademicDetails();
-        $details->edu_name_title = $request->edu_name_title;
-        $details->institute_name = $request->institute_name;
-        $details->subject = $request->subject;
-        $details->passing = $request->passing;
-        $details->result = $request->result;
-        $details->duration = $request->duration;
-        $details->details = $request->details;
+        $details = new WorkDetails();
+        $details->company_name = $request->company_name;
+        $details->designation = $request->designation;
+        $details->from_to = $request->from_to;
+        $details->description = $request->description;
 
         $details->save();
-        return redirect()->back()->with('message', 'Academic Details Submit Successfully');
+        return redirect()->back()->with('message', 'Work Details Submit Successfully');
     }
 
     /**

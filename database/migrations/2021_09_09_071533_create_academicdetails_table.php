@@ -15,13 +15,13 @@ class CreateAcademicdetailsTable extends Migration
     {
         Schema::create('academic_details', function (Blueprint $table) {
             $table->id();
-            $table->string('education_name');
-            $table->string('degree_title');
+            $table->string('edu_name_title');
             $table->string('institute_name');
-            $table->string('subject');
+            $table->string('subject')->nullable();
             $table->string('passing');
             $table->string('result');
-            $table->string('duration');
+            $table->string('duration')->nullable();
+            $table->longText('details')->nullable();
             $table->timestamps();
         });
     }

@@ -2246,31 +2246,14 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "index.vue",
   data: function data() {
     return {
       personal_details: [],
       what_i_do: [],
-      testimonial: []
+      testimonial: [],
+      counters: []
     };
   },
   methods: {
@@ -2297,12 +2280,21 @@ __webpack_require__.r(__webpack_exports__);
         var data = _ref3.data;
         return _this3.testimonial = data;
       })["catch"]();
+    },
+    getCounter: function getCounter() {
+      var _this4 = this;
+
+      axios.get('api/counters').then(function (_ref4) {
+        var data = _ref4.data;
+        return _this4.counters = data;
+      })["catch"]();
     }
   },
   created: function created() {
     this.getPersonalDetails();
     this.getWhatIDo();
     this.getTestimonial();
+    this.getCounter();
   }
 });
 
@@ -2705,103 +2697,36 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
-//
 /* harmony default export */ __webpack_exports__["default"] = ({
-  name: "resume.vue"
+  name: "resume.vue",
+  data: function data() {
+    return {
+      academic: [],
+      work: []
+    };
+  },
+  methods: {
+    getAcademicDetails: function getAcademicDetails() {
+      var _this = this;
+
+      axios.get('api/academic-details').then(function (_ref) {
+        var data = _ref.data;
+        return _this.academic = data;
+      })["catch"]();
+    },
+    getWorkDetails: function getWorkDetails() {
+      var _this2 = this;
+
+      axios.get('api/work-details').then(function (_ref2) {
+        var data = _ref2.data;
+        return _this2.work = data;
+      })["catch"]();
+    }
+  },
+  created: function created() {
+    this.getAcademicDetails();
+    this.getWorkDetails();
+  }
 });
 
 /***/ }),
@@ -38815,9 +38740,8 @@ var render = function() {
                         _vm._v(
                           "\n                                        " +
                             _vm._s(say.comment) +
-                            "\n"
+                            "\n                                    "
                         ),
-                        _vm._v(" "),
                         _c("div", { staticClass: "tesAuthor" }, [
                           _c("h5", [_vm._v(_vm._s(say.name) + ",")]),
                           _vm._v(" "),
@@ -38838,7 +38762,38 @@ var render = function() {
           _vm._v(" "),
           _vm._m(8),
           _vm._v(" "),
-          _vm._m(9)
+          _c(
+            "div",
+            { staticClass: "row mb30" },
+            _vm._l(_vm.counters, function(count) {
+              return _c(
+                "div",
+                { key: _vm.counters.id, staticClass: "col-lg-4" },
+                [
+                  _c(
+                    "div",
+                    {
+                      staticClass: "icon_box_03 text-center hasCounter",
+                      attrs: { "data-count": "10" }
+                    },
+                    [
+                      _c("div", { staticClass: "icon_div" }, [
+                        _c("i", [
+                          _c("span", { staticClass: "counter" }, [
+                            _vm._v(_vm._s(count.counter))
+                          ]),
+                          _vm._v("+")
+                        ])
+                      ]),
+                      _vm._v(" "),
+                      _c("h5", [_vm._v(_vm._s(count.topic))])
+                    ]
+                  )
+                ]
+              )
+            }),
+            0
+          )
         ],
         2
       )
@@ -39145,72 +39100,6 @@ var staticRenderFns = [
     return _c("div", { staticClass: "row mt60" }, [
       _c("div", { staticClass: "col-lg-12" }, [
         _c("h2", { staticClass: "sectionTitle" }, [_vm._v("Interesting Facts")])
-      ])
-    ])
-  },
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "row mb30" }, [
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c(
-          "div",
-          {
-            staticClass: "icon_box_03 text-center hasCounter",
-            attrs: { "data-count": "10" }
-          },
-          [
-            _c("div", { staticClass: "icon_div" }, [
-              _c("i", [
-                _c("span", { staticClass: "counter" }, [_vm._v("10")]),
-                _vm._v("+")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("h5", [_vm._v("Years Experience")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c(
-          "div",
-          {
-            staticClass: "icon_box_03 text-center hasCounter",
-            attrs: { "data-count": "198" }
-          },
-          [
-            _c("div", { staticClass: "icon_div" }, [
-              _c("i", [
-                _c("span", { staticClass: "counter" }, [_vm._v("198")]),
-                _vm._v("+")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("h5", [_vm._v("Projects Done")])
-          ]
-        )
-      ]),
-      _vm._v(" "),
-      _c("div", { staticClass: "col-lg-4" }, [
-        _c(
-          "div",
-          {
-            staticClass: "icon_box_03 text-center hasCounter",
-            attrs: { "data-count": "2000" }
-          },
-          [
-            _c("div", { staticClass: "icon_div" }, [
-              _c("i", [
-                _c("span", { staticClass: "counter" }, [_vm._v("2000")]),
-                _vm._v("K+")
-              ])
-            ]),
-            _vm._v(" "),
-            _c("h5", [_vm._v("Happy Customers")])
-          ]
-        )
       ])
     ])
   }
@@ -40074,28 +39963,25 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _vm._m(0)
-}
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "pageCointainer" }, [
-      _c("section", { staticClass: "comonSection resumeSection" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("h2", { staticClass: "sectionTitle" }, [_vm._v("Education")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "kr-accordion",
-                  attrs: { id: "edication_accordion" }
-                },
-                [
-                  _c("div", { staticClass: "card" }, [
+  return _c("div", { staticClass: "pageCointainer" }, [
+    _c("section", { staticClass: "comonSection resumeSection" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("h2", { staticClass: "sectionTitle" }, [_vm._v("Education")]),
+            _vm._v(" "),
+            _c(
+              "div",
+              { staticClass: "kr-accordion" },
+              _vm._l(_vm.academic, function(edu) {
+                return _c(
+                  "div",
+                  {
+                    key: _vm.academic.id,
+                    staticClass: "card",
+                    attrs: { id: "edication_accordion" }
+                  },
+                  [
                     _c(
                       "div",
                       { staticClass: "card-header", attrs: { id: "ea_01" } },
@@ -40115,9 +40001,7 @@ var staticRenderFns = [
                             [
                               _c("i", { staticClass: "icon icon-Medal" }),
                               _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Secondary School Certificate")
-                              ])
+                              _c("span", [_vm._v(_vm._s(edu.edu_name_title))])
                             ]
                           )
                         ])
@@ -40137,415 +40021,122 @@ var staticRenderFns = [
                       [
                         _c("div", { staticClass: "card-body" }, [
                           _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Passing Year: 2008")]),
-                            _c("span", [_vm._v("Grade: 3.92")])
+                            _c("span", [_vm._v(_vm._s(edu.institute_name))]),
+                            _c("br"),
+                            _c("br"),
+                            _vm._v(" "),
+                            _c("span", [
+                              _vm._v("Year Passing: " + _vm._s(edu.passing))
+                            ]),
+                            _c("span", [
+                              _vm._v("Result: " + _vm._s(edu.result))
+                            ]),
+                            _vm._v(" "),
+                            _c("br"),
+                            _c("br"),
+                            _c("span", [_vm._v(_vm._s(edu.subject))])
                           ]),
                           _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
+                            "\n                                    " +
+                              _vm._s(edu.details) +
+                              "\n                                "
                           )
                         ])
                       ]
                     )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ea_02" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "collapsed",
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ea_col_02",
-                                "aria-expanded": "false",
-                                "aria-controls": "ea_col_02"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Medal" }),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Higher Secondary School Certificate")
-                              ])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: {
-                          id: "ea_col_02",
-                          "aria-labelledby": "ea_02",
-                          "data-parent": "#edication_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Passing Year: 2010")]),
-                            _c("span", [_vm._v("Grade: 3.85")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ea_03" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "collapsed",
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ea_col_03",
-                                "aria-expanded": "false",
-                                "aria-controls": "ea_col_03"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Medal" }),
-                              _vm._v(" "),
-                              _c("span", [
-                                _vm._v("Computer Science & Engeneering")
-                              ])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: {
-                          id: "ea_col_03",
-                          "aria-labelledby": "ea_01",
-                          "data-parent": "#edication_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Passing Year: 2014")]),
-                            _c("span", [_vm._v("Grade: 3.79")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ea_04" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "collapsed",
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ea_col_04",
-                                "aria-expanded": "false",
-                                "aria-controls": "ea_col_04"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Medal" }),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Programming Course ")])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: {
-                          id: "ea_col_04",
-                          "aria-labelledby": "ea_01",
-                          "data-parent": "#edication_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Passing Year: 2015")]),
-                            _c("span", [_vm._v("Grade: 3.79")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ])
-                ]
-              )
-            ]),
+                  ]
+                )
+              }),
+              0
+            )
+          ]),
+          _vm._v(" "),
+          _c("div", { staticClass: "col-lg-6" }, [
+            _c("h2", { staticClass: "sectionTitle" }, [_vm._v("Experience")]),
             _vm._v(" "),
-            _c("div", { staticClass: "col-lg-6" }, [
-              _c("h2", { staticClass: "sectionTitle" }, [_vm._v("Experience")]),
-              _vm._v(" "),
-              _c(
-                "div",
-                {
-                  staticClass: "kr-accordion",
-                  attrs: { id: "exps_accordion" }
-                },
-                [
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ex_01" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ex_col_01",
-                                "aria-expanded": "true",
-                                "aria-controls": "ex_col_01"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Cup" }),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("ABC Software Ltd.")])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse show",
-                        attrs: {
-                          id: "ex_col_01",
-                          "aria-labelledby": "ex_01",
-                          "data-parent": "#exps_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Jan 2015 - Mar 2016")]),
-                            _c("span", [_vm._v("Jr. Developer")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ]),
+            _c(
+              "div",
+              { staticClass: "kr-accordion", attrs: { id: "exps_accordion" } },
+              _vm._l(_vm.work, function(company) {
+                return _c("div", { key: _vm.work.id, staticClass: "card" }, [
+                  _c(
+                    "div",
+                    { staticClass: "card-header", attrs: { id: "ex_01" } },
+                    [
+                      _c("h2", { staticClass: "mb-0" }, [
+                        _c(
+                          "a",
+                          {
+                            attrs: {
+                              href: "#",
+                              "data-toggle": "collapse",
+                              "data-target": "#ex_col_01",
+                              "aria-expanded": "true",
+                              "aria-controls": "ex_col_01"
+                            }
+                          },
+                          [
+                            _c("i", { staticClass: "icon icon-Cup" }),
+                            _vm._v(" "),
+                            _c("span", [_vm._v(_vm._s(company.company_name))])
+                          ]
+                        )
+                      ])
+                    ]
+                  ),
                   _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ex_02" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "collapsed",
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ex_col_02",
-                                "aria-expanded": "false",
-                                "aria-controls": "ex_col_02"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Cup" }),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("XYZ Company Ltd.")])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: {
-                          id: "ex_col_02",
-                          "aria-labelledby": "ex_02",
-                          "data-parent": "#exps_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Mar 2016 - Apr 2017")]),
-                            _c("span", [_vm._v("Sr. Developer")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ex_03" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "collapsed",
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ex_col_03",
-                                "aria-expanded": "false",
-                                "aria-controls": "ex_col_03"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Cup" }),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("LCC Softwar Ltd.")])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: {
-                          id: "ex_col_03",
-                          "aria-labelledby": "ex_01",
-                          "data-parent": "#exps_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Jul 2017 - Nov 2018")]),
-                            _c("span", [_vm._v("Lead Developer")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ]),
-                  _vm._v(" "),
-                  _c("div", { staticClass: "card" }, [
-                    _c(
-                      "div",
-                      { staticClass: "card-header", attrs: { id: "ex_04" } },
-                      [
-                        _c("h2", { staticClass: "mb-0" }, [
-                          _c(
-                            "a",
-                            {
-                              staticClass: "collapsed",
-                              attrs: {
-                                href: "#",
-                                "data-toggle": "collapse",
-                                "data-target": "#ex_col_04",
-                                "aria-expanded": "false",
-                                "aria-controls": "ex_col_04"
-                              }
-                            },
-                            [
-                              _c("i", { staticClass: "icon icon-Cup" }),
-                              _vm._v(" "),
-                              _c("span", [_vm._v("Envato Ltd.")])
-                            ]
-                          )
-                        ])
-                      ]
-                    ),
-                    _vm._v(" "),
-                    _c(
-                      "div",
-                      {
-                        staticClass: "collapse",
-                        attrs: {
-                          id: "ex_col_04",
-                          "aria-labelledby": "ex_04",
-                          "data-parent": "#exps_accordion"
-                        }
-                      },
-                      [
-                        _c("div", { staticClass: "card-body" }, [
-                          _c("div", { staticClass: "ac_meta" }, [
-                            _c("span", [_vm._v("Nov 2018 - Continue")]),
-                            _c("span", [_vm._v("Lead Developer")])
-                          ]),
-                          _vm._v(
-                            "\n                                    Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch.\n                                "
-                          )
-                        ])
-                      ]
-                    )
-                  ])
-                ]
-              )
-            ])
+                  _c(
+                    "div",
+                    {
+                      staticClass: "collapse show",
+                      attrs: {
+                        id: "ex_col_01",
+                        "aria-labelledby": "ex_01",
+                        "data-parent": "#exps_accordion"
+                      }
+                    },
+                    [
+                      _c("div", { staticClass: "card-body" }, [
+                        _c("div", { staticClass: "ac_meta" }, [
+                          _c("span", [_vm._v(_vm._s(company.from_to))]),
+                          _c("span", [_vm._v(_vm._s(company.designation))])
+                        ]),
+                        _vm._v(
+                          "\n                                    " +
+                            _vm._s(company.description) +
+                            "\n                                "
+                        )
+                      ])
+                    ]
+                  )
+                ])
+              }),
+              0
+            )
           ])
         ])
-      ]),
-      _vm._v(" "),
-      _c("footer", { staticClass: "footer" }, [
-        _c("div", { staticClass: "container-fluid" }, [
-          _c("div", { staticClass: "row" }, [
-            _c("div", { staticClass: "col-lg-12 text-center" }, [
-              _c("div", { staticClass: "copyRight" }, [
-                _vm._v("© 2021 All Rights Reserved By "),
-                _c(
-                  "a",
-                  { attrs: { href: "http://themewar.com", target: "_blank" } },
-                  [_vm._v("ThemeWar")]
-                )
-              ])
+      ])
+    ]),
+    _vm._v(" "),
+    _vm._m(0)
+  ])
+}
+var staticRenderFns = [
+  function() {
+    var _vm = this
+    var _h = _vm.$createElement
+    var _c = _vm._self._c || _h
+    return _c("footer", { staticClass: "footer" }, [
+      _c("div", { staticClass: "container-fluid" }, [
+        _c("div", { staticClass: "row" }, [
+          _c("div", { staticClass: "col-lg-12 text-center" }, [
+            _c("div", { staticClass: "copyRight" }, [
+              _vm._v("© 2021 All Rights Reserved By "),
+              _c(
+                "a",
+                { attrs: { href: "http://themewar.com", target: "_blank" } },
+                [_vm._v("ThemeWar")]
+              )
             ])
           ])
         ])
@@ -56450,11 +56041,11 @@ var routes = [{
   path: '/',
   component: _components_public_index_vue__WEBPACK_IMPORTED_MODULE_0__["default"]
 }, {
-  name: '/Resume',
+  name: 'Resume',
   path: '/Resume',
   component: _components_public_resume_vue__WEBPACK_IMPORTED_MODULE_1__["default"]
 }, {
-  name: '/Portfolio',
+  name: 'Portfolio',
   path: '/Portfolio',
   component: _components_public_portfolio_vue__WEBPACK_IMPORTED_MODULE_2__["default"]
 }, {
@@ -56462,11 +56053,11 @@ var routes = [{
   path: '/Portfolio/Portfolio-details',
   component: _components_public_portfolio_details__WEBPACK_IMPORTED_MODULE_3__["default"]
 }, {
-  name: '/Blog',
+  name: 'Blog',
   path: '/Blog',
   component: _components_public_blog_vue__WEBPACK_IMPORTED_MODULE_4__["default"]
 }, {
-  name: '/Contact',
+  name: 'Contact',
   path: '/Contact',
   component: _components_public_contact_vue__WEBPACK_IMPORTED_MODULE_5__["default"]
 }];

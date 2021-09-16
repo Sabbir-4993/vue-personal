@@ -44,35 +44,35 @@
                                 <div class="row">
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="exampleInputEducation1">Level of Education</label>
-                                            <input type="text" name="education_name" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp">
+                                            <label for="exampleInputEducation1">Education Name & Title</label>
+                                            <input type="text" name="edu_name_title" class="form-control" id="exampleInputEducation1" aria-describedby="nameHelp" required="">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputInstitute">Institute Name</label>
-                                            <input type="text" name="institute_name" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp">
+                                            <input type="text" name="institute_name" class="form-control" id="exampleInputInstitute" aria-describedby="examHelp" required="">
                                         </div>
 
                                         <div class="form-group">
                                             <label for="exampleInputPassing">Year of Passing </label>
-                                            <input type="text" name="passing" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
+                                            <input type="text" name="passing" class="form-control" id="exampleInputPassing" aria-describedby="examHelp" required="">
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputPassing">Duration <span class="small">(Years)</span></label>
-                                            <input type="text" name="duration" class="form-control" id="exampleInputPassing" aria-describedby="examHelp">
+                                            <input type="text" name="duration" class="form-control" id="exampleInputPassing" aria-describedby="examHelp" >
                                         </div>
                                     </div>
                                     <div class="col-md-6">
                                         <div class="form-group">
-                                            <label for="exampleInputExamTitle">Exam/Degree Title</label>
-                                            <input type="text" name="degree_title" class="form-control" id="exampleInputExamTitle" aria-describedby="examHelp">
-                                        </div>
-                                        <div class="form-group">
                                             <label for="exampleInputGroup">Concentration/ Major/Group </label>
-                                            <input type="text" name="subject" class="form-control" id="exampleInputGroup" aria-describedby="examHelp">
+                                            <input type="text" name="subject" class="form-control" id="exampleInputGroup" aria-describedby="examHelp" >
                                         </div>
                                         <div class="form-group">
                                             <label for="exampleInputResult">Result</label>
-                                            <input type="text" name="result" class="form-control" id="exampleInputResult" aria-describedby="examHelp">
+                                            <input type="text" name="result" class="form-control" id="exampleInputResult" aria-describedby="examHelp" required="">
+                                        </div>
+                                        <div class="form-group">
+                                            <label for="exampleInputResult">Details</label>
+                                            <textarea name="details" class="form-control"></textarea>
                                         </div>
                                     </div>
                                 </div>

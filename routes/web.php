@@ -20,6 +20,7 @@ Route::group(['prefix' => 'admin'], function () {
         'verify' => false, // Email Verification Routes...
     ]);
 });
+
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
     Route::resource('personal-details', 'Backend\PersonalDetailsController');
@@ -28,8 +29,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('What-I-do', 'Backend\WhatIDoController');
     Route::resource('testimonials', 'Backend\TestimonialController');
     Route::resource('interesting-facts', 'Backend\CounterController');
+    Route::resource('work-details', 'Backend\WorkDetailsController');
 });
-
 
 Route::get('/{vue_capture?}', function () {
     return view('welcome');

@@ -93,9 +93,7 @@
                                     <span></span>
                                 </div>
                                 <div class="testicon">
-<!--                                    <p>-->
                                         {{ say.comment  }}
-<!--                                    </p>-->
                                     <div class="tesAuthor"><h5>{{ say.name }},</h5> <h6>{{ say.designation }}</h6></div>
                                 </div>
                             </div>
@@ -206,28 +204,12 @@
                     </div>
                 </div>
                 <div class="row mb30">
-                    <div class="col-lg-4">
+                    <div class="col-lg-4"  v-for="count in counters" :key="counters.id">
                         <div class="icon_box_03 text-center hasCounter" data-count="10">
                             <div class="icon_div">
-                                <i><span class="counter">10</span>+</i>
+                                <i><span class="counter">{{ count.counter }}</span>+</i>
                             </div>
-                            <h5>Years Experience</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_03 text-center hasCounter" data-count="198">
-                            <div class="icon_div">
-                                <i><span class="counter">198</span>+</i>
-                            </div>
-                            <h5>Projects Done</h5>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="icon_box_03 text-center hasCounter" data-count="2000">
-                            <div class="icon_div">
-                                <i><span class="counter">2000</span>K+</i>
-                            </div>
-                            <h5>Happy Customers</h5>
+                            <h5>{{ count.topic }}</h5>
                         </div>
                     </div>
                 </div>
@@ -254,6 +236,7 @@ export default {
             personal_details: [],
             what_i_do: [],
             testimonial: [],
+            counters: [],
         }
     },
     methods:{
@@ -272,11 +255,17 @@ export default {
             .then(({data}) => (this.testimonial = data))
             .catch()
         },
+        getCounter(){
+            axios.get('api/counters')
+            .then(({data}) => (this.counters = data))
+            .catch()
+        },
     },
     created(){
         this.getPersonalDetails();
         this.getWhatIDo();
         this.getTestimonial();
+        this.getCounter();
     }
 }
 </script>

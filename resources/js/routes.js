@@ -13,12 +13,12 @@ export const routes = [
         component: IndexComponent
     },
     {
-        name: '/Resume',
+        name: 'Resume',
         path: '/Resume',
         component: ResumeComponent
     },
     {
-        name: '/Portfolio',
+        name: 'Portfolio',
         path: '/Portfolio',
         component: PortfolioComponent
     },
@@ -28,12 +28,12 @@ export const routes = [
         component: PortfolioDetailsComponent
     },
     {
-        name: '/Blog',
+        name: 'Blog',
         path: '/Blog',
         component: BlogComponent
     },
     {
-        name: '/Contact',
+        name: 'Contact',
         path: '/Contact',
         component: ContactComponent
     }

@@ -25,6 +25,7 @@
             <div class="bg-white py-2 collapse-inner rounded">
                 <a class="collapse-item @yield('personal_active')" href="{{route('personal-details.index')}}">Personal Details</a>
                 <a class="collapse-item  @yield('academic_active')" href="{{route('academic-details.index')}}">Academic Details</a>
+                <a class="collapse-item  @yield('works_active')" href="{{route('work-details.index')}}">Work Details</a>
                 <a class="collapse-item  @yield('job_active')" href="{{route('job-experience.index')}}">Job Experience</a>
                 <a class="collapse-item  @yield('what_i_do_active')" href="{{route('What-I-do.index')}}">What I Do?</a>
                 <a class="collapse-item  @yield('what_they_say_active')" href="{{route('testimonials.index')}}">What They Say?</a>
