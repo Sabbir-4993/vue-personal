@@ -136,7 +136,12 @@
                 </div>
                 <div class="row loadMoreRow mb22">
                     <div class="col-lg-12 loadMoreCol text-center mt23">
-                        <router-link to="/Portfolio/Portfolio-details" data-count="1" class="btt_btn bttb_dark loadMoreItem"><span><i class="icon icon-Restart"></i> Load More</span></router-link>
+                        <router-link to="/Portfolio/Portfolio-details" data-count="1" class="btt_btn bttb_dark loadMoreItem">
+                            <span>
+                                <i class="icon icon-Restart"></i>
+                                Load More
+                            </span>
+                        </router-link>
                     </div>
                 </div>
             </div>

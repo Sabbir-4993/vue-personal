@@ -53,7 +53,7 @@
             <div class="container-fluid">
                 <div class="row">
                     <div class="col-lg-12 text-center">
-                        <div class="copyRight">&copy; 2021 All Rights Reserved By <a href="http://themewar.com" target="_blank">ThemeWar</a></div>
+                        <div class="copyRight">&copy; 2021 All Rights Reserved By <router-link to="/">Sabbir</router-link> </div>
                     </div>
                 </div>
             </div>

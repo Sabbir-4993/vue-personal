@@ -37,24 +37,24 @@
                             </form>
                         </div>
                     </div>
-                    <div class="col-lg-4">
+                    <div class="col-lg-4" v-for="details in personal_details" :key="personal_details.id">
                         <div class="icon_box_01">
                             <i class="icon icon-Mail"></i>
                             <h3>Email Address</h3>
-                            <p>k.melissa@caroll.me</p>
+                            <p>{{ details.email_pre }}</p>
+                            <p>{{ details.email_alt }}</p>
                         </div>
                         <div class="icon_box_01">
                             <i class="icon icon-Phone"></i>
                             <h3>Phone Number</h3>
-                            <p>1.800.987.6987</p>
+                            <p>{{ details.phone_pre }}</p>
+                            <p>{{ details.phone_alt }}</p>
                         </div>
                         <div class="icon_box_01 addrBox">
                             <i class="icon icon-Pointer"></i>
                             <h3>Address</h3>
                             <p>
-                                189 Lodge Avenue,
-                                Dagenham, RM8 2HQ,
-                                United Kingdom
+                                {{ details.address }}
                             </p>
                         </div>
                     </div>
@@ -75,7 +75,24 @@
 
 <script>
 export default {
-    name: "contact.vue"
+    name: "contact.vue",
+
+    data(){
+        return{
+            personal_details: [],
+        }
+    },
+
+    methods: {
+        getPersonalDetails() {
+            axios.get('api/personal-details')
+                .then(({data}) => (this.personal_details = data))
+                .catch()
+        },
+    },
+    created(){
+        this.getPersonalDetails();
+    }
 }
 </script>
 

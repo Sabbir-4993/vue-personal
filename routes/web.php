@@ -23,6 +23,9 @@ Route::group(['prefix' => 'admin'], function () {
 
 Route::group(['prefix' => 'admin'], function () {
     Route::get('/home', 'HomeController@index')->name('admin_home');
+
+//    Resume
+
     Route::resource('personal-details', 'Backend\PersonalDetailsController');
     Route::resource('academic-details', 'Backend\AcademicDetailsController');
     Route::resource('job-experience', 'Backend\JobExperienceController');
@@ -30,6 +33,13 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('testimonials', 'Backend\TestimonialController');
     Route::resource('interesting-facts', 'Backend\CounterController');
     Route::resource('work-details', 'Backend\WorkDetailsController');
+
+//    Portfolio
+    Route::get('portfolio/category-create', 'Backend\CategoryController@cat_create')->name('category_add');
+    Route::post('portfolio/category-store', 'Backend\CategoryController@cat_store')->name('category_store');
+
+    Route::get('portfolio', 'Backend\PortfolioController@index')->name('portfolio');
+
 });
 
 Route::get('/{vue_capture?}', function () {

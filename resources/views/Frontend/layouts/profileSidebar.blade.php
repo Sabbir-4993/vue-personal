@@ -38,7 +38,7 @@
         </div>
     </div>
     <div class="psFooter">
-        <a href="./public/cv/CV.pdf" class="btt_btn only_icon btt_reverse" download><span><i class="icon icon-DownloadCloud"></i></span></a>
+        <a href="{{asset('public/cv/CV.pdf')}}" class="btt_btn only_icon btt_reverse" download><span><i class="icon icon-DownloadCloud"></i></span></a>
         <a href="" class="btt_btn"><span><i class="icon icon-Bag"></i> Hire Me</span></a>
     </div>
 </div>

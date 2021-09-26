@@ -33,17 +33,16 @@
             </div>
         </div>
     </li>
-    <li class="nav-item">
+    <li class="nav-item @yield('portfolio_active')">
         <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseProject" aria-expanded="true"
            aria-controls="collapseProject">
             <i class="fab fa-fw fa-wpforms"></i>
             <span>Projects</span>
         </a>
-        <div id="collapseProject" class="collapse" aria-labelledby="headingForm" data-parent="#accordionSidebar">
+        <div id="collapseProject" class="collapse @yield('portfolio')" aria-labelledby="headingForm" data-parent="#accordionSidebar">
             <div class="bg-white py-2 collapse-inner rounded">
-                <h6 class="collapse-header">Forms</h6>
-                <a class="collapse-item" href="#">Add Category</a>
-                <a class="collapse-item" href="#">Add Portfolio</a>
+                <a class="collapse-item @yield('category_add_active')" href="{{route('category_add')}}">Add Category</a>
+                <a class="collapse-item @yield('portfolio_active')" href="{{route('portfolio')}}">Add Portfolio</a>
                 <a class="collapse-item" href="#">View Portfolio</a>
             </div>
         </div>
